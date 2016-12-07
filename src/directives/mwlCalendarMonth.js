@@ -54,6 +54,14 @@ angular
       ], toggleCell);
     }
 
+    vm.dayDblclicked = function(day, dayClickedFirstRun, $event) {
+      vm.onTimespanDblclick({
+        calendarDate: day.date.toDate(),
+        calendarCell: day,
+        $event: $event
+      });
+    };
+
     vm.dayClicked = function(day, dayClickedFirstRun, $event) {
 
       if (!dayClickedFirstRun) {
@@ -166,6 +174,7 @@ angular
         cellIsOpen: '=',
         cellAutoOpenDisabled: '=',
         onTimespanClick: '=',
+        onTimespanDblclick: '=',
         cellModifier: '=',
         slideBoxDisabled: '=',
         customTemplateUrls: '=?',

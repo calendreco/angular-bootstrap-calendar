@@ -96,6 +96,7 @@ angular
         dayViewSplit: '=',
         dayViewEventChunkSize: '=',
         onTimespanClick: '=',
+        onTimespanDblclick: '=',
         onDateRangeSelect: '=',
         customTemplateUrls: '=?',
         cellModifier: '=',

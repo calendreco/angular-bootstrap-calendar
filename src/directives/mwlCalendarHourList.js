@@ -126,6 +126,7 @@ angular
         dayViewEnd: '=',
         dayViewSplit: '=',
         dayWidth: '=?',
+        onTimespanDblclick: '=',
         onTimespanClick: '=',
         onDateRangeSelect: '=',
         onEventTimesChanged: '=',

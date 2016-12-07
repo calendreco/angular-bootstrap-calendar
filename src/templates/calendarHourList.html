@@ -9,6 +9,7 @@
                 vm.dateRangeSelect.startDate <= segment.date &&
                 segment.date < vm.dateRangeSelect.endDate }, segment.cssClass]"
       ng-click="vm.onTimespanClick({calendarDate: segment.date})"
+      ng-dblclick="vm.onTimespanDblclick({calendarDate: segment.date})"
       mwl-droppable
       on-drop="vm.eventDropped(dropData.event, segment.date)"
       mwl-drag-select="!!vm.onDateRangeSelect"
@@ -37,6 +38,7 @@
                 vm.dateRangeSelect.startDate <= day.date &&
                 day.date < vm.dateRangeSelect.endDate }, day.cssClass]"
         ng-click="vm.onTimespanClick({calendarDate: day.date})"
+        ng-dblclick="vm.onTimespanDblclick({calendarDate: day.date})"
         mwl-droppable
         on-drop="vm.eventDropped(dropData.event, day.date)"
         mwl-drag-select="!!vm.onDateRangeSelect"

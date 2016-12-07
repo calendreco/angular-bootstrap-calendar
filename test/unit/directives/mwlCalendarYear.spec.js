@@ -22,6 +22,7 @@ describe('mwlCalendarYear directive', function() {
       'cell-is-open="cellIsOpen"' +
       'cell-auto-open-disabled="true"' +
       'on-timespan-click="onTimeSpanClick"' +
+      'on-timespan-dblclick="onTimeSpanDblclick"' +
       'day-view-split="dayViewSplit || 30" ' +
       '></mwl-calendar-year>';
   var calendarDay = new Date(2015, 4, 1);
@@ -118,6 +119,18 @@ describe('mwlCalendarYear directive', function() {
     MwlCalendarCtrl.view = [{date: moment(calendarDay), inMonth: true}];
     MwlCalendarCtrl.monthClicked(MwlCalendarCtrl.view[0], false);
     expect(scope.onTimeSpanClick).to.have.been.calledWith({
+      calendarDate: MwlCalendarCtrl.view[0].date.toDate(),
+      calendarCell: MwlCalendarCtrl.view[0],
+      $event: undefined
+    });
+  });
+
+  it('should call the on time span dblclicked callback', function() {
+    scope.onTimeSpanDblclick = sinon.spy();
+    scope.$apply();
+    MwlCalendarCtrl.view = [{date: moment(calendarDay), inMonth: true}];
+    MwlCalendarCtrl.monthDblclicked(MwlCalendarCtrl.view[0], false);
+    expect(scope.onTimeSpanDblclick).to.have.been.calledWith({
       calendarDate: MwlCalendarCtrl.view[0].date.toDate(),
       calendarCell: MwlCalendarCtrl.view[0],
       $event: undefined

@@ -24,6 +24,7 @@ describe('mwlCalendarMonth directive', function() {
       'cell-is-open="cellIsOpen"' +
       'cell-auto-open-disabled="true"' +
       'on-timespan-click="onTimeSpanClick"' +
+      'on-timespan-dblclick="onTimeSpanDblclick"' +
       'day-view-split="dayViewSplit || 30" ' +
       'cell-template-url="{{ monthCellTemplateUrl }}" ' +
       'cell-events-template-url="{{ monthCellEventsTemplateUrl }}" ' +
@@ -117,6 +118,16 @@ describe('mwlCalendarMonth directive', function() {
     MwlCalendarCtrl.view = [{date: moment(calendarDay), inMonth: true}];
     MwlCalendarCtrl.dayClicked(MwlCalendarCtrl.view[0]);
     expect(showModal).to.have.been.calledWith('Day clicked', {
+      calendarDate: MwlCalendarCtrl.view[0].date.toDate(),
+      $event: undefined,
+      calendarCell: MwlCalendarCtrl.view[0]
+    });
+  });
+
+  it('should call the on timespan dblclicked callback ', function() {
+    MwlCalendarCtrl.view = [{date: moment(calendarDay), inMonth: true}];
+    MwlCalendarCtrl.dayDblclicked(MwlCalendarCtrl.view[0]);
+    expect(showModal).to.have.been.calledWith('Day dblclicked', {
       calendarDate: MwlCalendarCtrl.view[0].date.toDate(),
       $event: undefined,
       calendarCell: MwlCalendarCtrl.view[0]

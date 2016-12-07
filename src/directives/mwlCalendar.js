@@ -133,6 +133,7 @@ angular
         customTemplateUrls: '=?',
         onEventClick: '&',
         onEventTimesChanged: '&',
+        onTimespanDblclick: '&',
         onTimespanClick: '&',
         onDateRangeSelect: '&?',
         onViewChangeClick: '&',

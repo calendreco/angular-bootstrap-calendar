@@ -96,6 +96,7 @@ angular
         viewDate: '=',
         onEventClick: '=',
         onEventTimesChanged: '=',
+        onTimespanDblclick: '=',
         onTimespanClick: '=',
         onDateRangeSelect: '=',
         dayViewStart: '=',
